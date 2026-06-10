@@ -24,6 +24,19 @@ See the [design doc](design/tokens-cli.md) for this and other decisions.
 
 ## Install
 
+### Prebuilt binary (recommended — no Rust toolchain needed)
+
+```sh
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/spwg/token-counter/releases/latest/download/token-counter-installer.sh | sh
+```
+
+Installs the `tokens` binary for Apple Silicon macOS, x64 Linux, or ARM64
+Linux. Binaries for each platform are also attached to the
+[latest release](https://github.com/spwg/token-counter/releases/latest) if
+you'd rather download one directly.
+
+### From source
+
 Requires a Rust toolchain ([rustup](https://rustup.rs)).
 
 ```sh
