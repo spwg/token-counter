@@ -1,0 +1,28 @@
+[package]
+name = "token-counter"
+version = "0.1.0"
+edition = "2024"
+repository = "https://github.com/spwg/token-counter"
+
+[[bin]]
+name = "tokens"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0.102"
+clap = { version = "4.6.1", features = ["derive"] }
+hf-hub = { version = "0.5.0", default-features = false, features = ["ureq"] }
+serde_json = { version = "1.0.150", features = ["preserve_order"] }
+tiktoken-rs = "0.12.0"
+tokenizers = "0.23.1"
+ureq = { version = "3.3.0", default-features = false }
+
+[dev-dependencies]
+assert_cmd = "2.2.2"
+predicates = "3.1.4"
+tempfile = "3.27.0"
+
+# The profile that 'dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
